@@ -1,7 +1,7 @@
 # Final-Project-Tuwaiq-Generative-AI
 # PoemGen: AI Poetry Generation Project
 
-This project integrates several AI tasks, including text generation, text-to-speech, translation, and text-to-image functionalities, using models from Hugging Face's Transformers library. The project enables the generation of poems in both Arabic and English, converts text to speech, translates Arabic poems to English, and generates images based on the translated English text.
+This project integrates several AI tasks, including text generation, text-to-speech, translation, and text-to-image functionalities, using models from Hugging Face's Transformers library. The project enables the generation of poems in both Arabic and English, converts text to speech, translates Arabic poems to English, and generates images based on the input sentence.
 
 ## Aim
 
@@ -9,7 +9,7 @@ The aim of this project is to:
 1. Automatically generate poems in both Arabic and English.
 2. Convert the generated poems to speech in their respective languages.
 3. Translate Arabic poems into English for image generation.
-4. Generate images that reflect the meaning of the poems based on the English translation.
+4. Generate images that reflect the input sentence of the poems based on the English translation.
 
 ## Why We Chose These Models
 
@@ -23,7 +23,7 @@ The MBZUAI/speecht5_tts_clartts_ar model was selected for Arabic text-to-speech,
 Since the image generation model (CompVis/stable-diffusion-v1-4) does not support Arabic, we use the Helsinki-NLP/opus-mt-ar-en model to translate Arabic poems into English. This ensures that the model can interpret the text effectively and generate accurate images based on the translation.
 
 - *Image Generation*: 
-The CompVis/stable-diffusion-v1-4 model was chosen for its superior ability to generate detailed and relevant images from textual descriptions. By translating Arabic poems into English, we ensure that the model can interpret the meaning effectively and generate accurate visuals.
+The runwayml/stable-diffusion-v1-5 model was chosen for its superior ability to generate detailed and relevant images from textual descriptions. By translating Arabic poems into English, we ensure that the model can interpret the meaning effectively and generate accurate visuals.
 
 ## Limitations
 - *Poem Generation Quality*: 
