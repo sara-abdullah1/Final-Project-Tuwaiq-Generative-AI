@@ -1,7 +1,9 @@
 # Final-Project-Tuwaiq-Generative-AI
 # PoemGen: AI Poetry Generation Project
 
-This project integrates several AI tasks, including text generation, text-to-speech, translation, and text-to-image functionalities, using models from Hugging Face's Transformers library. The project enables the generation of poems in both Arabic and English, converts text to speech, translates Arabic poems to English, and generates images based on the input sentence.
+This project integrates several generative Artificial Intelligence tasks, including text generation, text-to-speech, translation, and text-to-image, using models from Hugging Face's Transformers library.
+
+The project allows users to generate poems in both Arabic and English based on their input, converts the text to speech, translates Arabic input into English to support text-to-image generation, and produces images that capture the essence of the poem.
 
 ## Aim
 
