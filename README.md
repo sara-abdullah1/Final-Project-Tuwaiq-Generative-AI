@@ -15,19 +15,23 @@ The aim of this project is to:
 
 ## Why We Chose These Models:
 
-- *Text Generation*: 
-We chose the akhooli/ap2023 model for Arabic poem generation because the availability of high-quality Arabic poem generator models is limited, and many existing models lack consistency. This model stood out as the best option to support our idea compared to others.
-For English poem generation, we selected the ashiqabdulkhader/GPT2-Poet model. Although the availability of English poem generation models is limited, this model was the best among the available options. While it can generate poems as expected, it sometimes lacks coherence in meaning. However, compared to other models, it provided the most reliable results.
+### Text Generation:
+
+- **Arabic Poem Generation**:  
+  We chose the [**akhooli/ap2023**](https://huggingface.co/akhooli/ap2023) model for Arabic poem generation because the availability of high-quality Arabic poem generator models is limited, and many existing models lack consistency. This model stood out as the best option to support our idea compared to others.
+
+- **English Poem Generation**:  
+  For English poem generation, we selected the [**ashiqabdulkhader/GPT2-Poet**](https://huggingface.co/ashiqabdulkhader/GPT2-Poet) model. Although there is also a lack of high-quality English poem generation models, this one was the best among the available options. While it can generate poems as expected, it sometimes lacks coherence in meaning. However, compared to other models, it provided the most reliable results.
 
 These models are pre-trained for creative text generation, making them ideal for producing meaningful and artistic poems.
   
-- *Text-to-Speech (TTS)*: 
+### Text-to-Speech: 
 The MBZUAI/speecht5_tts_clartts_ar model was selected for Arabic text-to-speech, and microsoft/speecht5_tts for English. Both models are highly accurate in producing natural-sounding speech, which enhances the user experience of listening to the generated poems.
 
-- *Translation*: 
+### Translation:
 Since the image generation model (CompVis/stable-diffusion-v1-4) does not support Arabic, we use the Helsinki-NLP/opus-mt-ar-en model to translate Arabic poems into English. This ensures that the model can interpret the text effectively and generate accurate images based on the translation.
 
-- *Image Generation*: 
+### Image Generation:
 The runwayml/stable-diffusion-v1-5 model was chosen for its superior ability to generate detailed and relevant images from textual descriptions. By translating Arabic poems into English, we ensure that the model can interpret the meaning effectively and generate accurate visuals.
 
 ## Limitations
