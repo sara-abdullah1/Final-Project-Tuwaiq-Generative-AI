@@ -5,7 +5,7 @@ This project integrates several generative Artificial Intelligence tasks, includ
 
 The project allows users to generate poems in both Arabic and English based on their input, converts the text to speech, translates Arabic input into English to support text-to-image generation, and produces images that capture the essence of the poem.
 
-## Aim:
+## Aim
 
 The aim of this project is to:
 1. Generate poems in both Arabic and English based on user input.
@@ -13,7 +13,7 @@ The aim of this project is to:
 3. Translate Arabic poems into English to support image generation.
 4. Generate images that visually represent the essence of the input poem.
 
-## Why We Chose These Models:
+## Why We Chose These Models
 
 ### Text Generation:
 
@@ -48,92 +48,118 @@ The [**runwayml/stable-diffusion-v1-5**](https://huggingface.co/runwayml/stable-
 
 
 ## Limitations
-- *Poem Generation Quality*: 
-The models used to generate poems do not always produce fluent or aesthetically pleasing text. In Arabic, the output is often broken and requires significant post-processing to clean up and enhance the text's readability and coherence.
-  
-- *Image Generation from Arabic*: 
-The models that convert Arabic texts into images are few, and they require a large GPU to function efficiently. Additionally, the translation from Arabic to English may not always capture the full poetic nuance or cultural references, which can negatively impact the accuracy and overall quality of the image generation process.
 
-- *Arabic Text-to-Speech Issues*: The Arabic text-to-speech model struggles to complete sentences and often mispronounces or entirely skips certain words. Sometimes stop before completing the full sentence, leaving the output cut off. It does not handle Arabic text as fluently as the English text-to-speech model.
+- **Poem Generation Quality**:  
+  The models used to generate poems do not always produce fluent or aesthetically pleasing text. In Arabic, the output is often fragmented and requires significant post-processing to improve readability and coherence.
 
-- *Random Termination in Text Generation*: All text generation models tend to end abruptly and randomly at incomplete points, without concluding the poem naturally. This results in unfinished sentences or thoughts, which diminishes the quality of the generated poems.
+- **Image Generation from Arabic**:  
+  The models that convert Arabic texts into images are limited, and they require a large GPU to function efficiently. Additionally, translation from Arabic to English may not always capture the full poetic nuance or cultural references, which can negatively impact the accuracy and overall quality of the image generation process.
+
+- **Arabic Text-to-Speech Issues**:  
+  The Arabic text-to-speech model struggles to complete sentences and often mispronounces or skips certain words. It sometimes stops before finishing a full sentence, resulting in cut-off output. Additionally, it does not handle Arabic text as fluently as the English text-to-speech model.
+
+- **Random Termination in Text Generation**:  
+  All text generation models tend to end abruptly and randomly at incomplete points, without concluding the poem naturally. This results in unfinished sentences or thoughts, which diminishes the overall quality of the generated poems.
+
 
 ## Special Measures Taken to Support the Arabic Language
 
-To ensure that Arabic poems can be used effectively with models that primarily support English, we implemented a translation step after generating the poem in Arabic. Once the Arabic poem is created, it is translated into English using the Helsinki-NLP/opus-mt-ar-en model. The translated text is then used for image generation, as the image model (CompVis/stable-diffusion-v1-4) only accepts English text inputs. 
+To ensure that Arabic input can be used effectively with models that primarily support English, we implemented a translation step after generating the poem in Arabic. Once the Arabic input is created, it is translated into English using the [**Helsinki-NLP/opus-mt-ar-en**](https://huggingface.co/Helsinki-NLP/opus-mt-ar-en) model. The translated text is then used for image generation, as the image model [**runwayml/stable-diffusion-v1-5**](https://huggingface.co/runwayml/stable-diffusion-v1-5) only accepts English text inputs.
 
-This approach allows us to incorporate Arabic-language poems into the project, while still utilizing powerful image generation models that are limited to English. However, it's important to note that the translation may not always capture the full nuance or cultural context of the original Arabic poem, which could influence the accuracy and relevance of the generated image.
+This approach allows us to incorporate Arabic-language inputs into the project while still utilizing powerful image generation models that are limited to English. However, it's important to note that the translation may not always capture the full nuance or cultural context of the original Arabic input, which could influence the accuracy and relevance of the generated image.
+
 
 ## Features
 
-1. *Poem Generation*:
-   - Arabic poem generation using the akhooli/ap2023 model.
-   - English poem generation using the ashiqabdulkhader/GPT2-Poet model.
+1. **Poem Generation**:
+   - Arabic poem generation using the **akhooli/ap2023** model.
+   - English poem generation using the **ashiqabdulkhader/GPT2-Poet** model.
 
-2. *Text-to-Speech (TTS)*:
-   - Converts Arabic poems to speech using the MBZUAI/speecht5_tts_clartts_ar model.
-   - Converts English poems to speech using the microsoft/speecht5_tts model.
+2. **Text-to-Speech**:
+   - Converts Arabic poems to speech using the **MBZUAI/speecht5_tts_clartts_ar** model.
+   - Converts English poems to speech using the **microsoft/speecht5_tts** model.
 
-3. *Translation*:
-   - Arabic poems are translated into English using the Helsinki-NLP/opus-mt-ar-en model to facilitate image generation.
+3. **Translation**:
+   - Arabic poems are translated into English using the **Helsinki-NLP/opus-mt-ar-en** model to facilitate image generation.
 
-4. *Text-to-Image*:
-   - Generates an image from the translated English poem using the CompVis/stable-diffusion-v1-4 model.
+4. **Text-to-Image**:
+   - Generates an image from the translated English input using the **runwayml/stable-diffusion-v1-5** model.
 
-5. *Gradio Interface*:
+5. **Gradio Interface**:
    - An interactive web interface where users can:
      - Generate poems in Arabic or English.
-     - Convert generated poems into speech (TTS).
-     - Translate Arabic poems into English.
+     - Convert generated poems into speech.
      - Generate an image based on the translated poem.
+
 
 ## Dependencies
 
 To run the project, the following Python packages are required:
 
-- transformers
-- gradio
-- torch
-- uvicorn
-- soundfile
-- datasets
-- diffusers
+- **transformers**
+- **gradio**
+- **torch**
+- **uvicorn** (commented out)
+- **datasets**
+- **diffusers**
 
 Install these dependencies using pip:
 
 bash
-pip install transformers gradio torch uvicorn soundfile datasets diffusers
+pip install transformers gradio torch datasets diffusers
 
 
-## Funcations
+## Functions
 
-1. *Poem Generation*:
+1. *Primary Function: generate_poem*:
+   This function receives 2 inputs from the Gradio interface, executes the following functions, and returns 3 outputs:
+   - The generated poem.
+   - The audio.
+   - The image.
 
-- The generate_poem function generates a poem or text based on a provided sentence.
+2. *Poem Generation Functions: generate_poem_arabic and generate_poem_english*:
+   These functions are responsible for generating a poem (text) in Arabic or English, based on the provided text.
+   - The `generate_poem_arabic` function generates an Arabic poem.
+   - The `generate_poem_english` function generates an English poem.
 
-2. *Text-to-Speech (TTS)*:
+3. *Audio Functions: text_to_speech_arabic and text_to_speech_english*:
+   These functions are responsible for generating audio in Arabic or English, based on the provided text.
+   - The `text_to_speech_arabic` function converts Arabic text to speech.
+   - The `text_to_speech_english` function converts English text to speech.
 
-- The text_to_speech_arabic function converts Arabic text to speech.
-- The text_to_speech_english function converts English text to speech.
+4. *Image Function: generate_image_from_poem*:
+   This function is responsible for generating an image based on the provided text.
 
-4. *Gradio Interface*:
-- The generate_image_from_poem function creates an image based on the input poem.
+5. *Translation Function: translate_arabic_to_english*:
+   This function is responsible for translating the Arabic input to English to be used for the image function, which accepts only English inputs.
 
-### 4- Gradio Interface:
 
-- The Gradio interface can be launched with my_model.launch().
+## Gradio Interface:
+
+The Gradio interface enables you to choose the language for the poem, either Arabic or English. You can then provide a text (sentence) as a starting point for the poem. The entire poem will be in the context of the provided text (sentence). 
+
+### Expected Results:
+1. The generated poem.
+2. Audio reading the poem.
+3. An image capturing the essence of the poem.
+
+- The Gradio interface uses the primary function `generate_poem`, has predefined examples, features a custom CSS style, and can be launched with `my_model.launch()`.
+
 
 ## Running the Project
-To run the project locally, use the following steps:
-    1- Clone or download the project.
-    2- Install the required dependencies.
-    3- Execute the script:
+
+To run the project locally, follow these steps:
+
+1. Clone or download the project.
+2. Install the required dependencies (refer to the **Dependencies** section).
+3. Execute the script:
 
 This will open a Gradio UI where you can select the language (Arabic or English), input a sentence, and generate the following outputs:
 
 - A poem.
-- Audio of the generated poem (TTS).
-- An image based on the generated poem.
+- Audio of the generated poem.
+- An image.
+
 
 ## Expected Output
 Below are the expected outputs for both English and Arabic poem generation, including the generated text, text-to-speech output, translation (if applicable), and the generated image based on the input.
