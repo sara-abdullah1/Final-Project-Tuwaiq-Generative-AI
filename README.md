@@ -1,5 +1,5 @@
 ## Final-Project-Tuwaiq-Generative-AI
-# PoemGen: AI Poetry Generation Project
+# PoemGen: AI Poem Generation Project
 
 This project integrates several generative Artificial Intelligence tasks, including text generation, text-to-speech, translation, and text-to-image, using models from Hugging Face's Transformers library.
 
@@ -25,8 +25,16 @@ The aim of this project is to:
 
 These models are pre-trained for creative text generation, making them ideal for producing meaningful and artistic poems.
   
-### Text-to-Speech: 
-The MBZUAI/speecht5_tts_clartts_ar model was selected for Arabic text-to-speech, and microsoft/speecht5_tts for English. Both models are highly accurate in producing natural-sounding speech, which enhances the user experience of listening to the generated poems.
+### Text-to-Speech
+
+- **Arabic Text-to-Speech**:  
+  The [**MBZUAI/speecht5_tts_clartts_ar**](https://huggingface.co/MBZUAI/speecht5_tts_clartts_ar) model was selected for Arabic text-to-speech. After evaluating multiple Text-to-Speech models for Arabic, this one provided superior pronunciation and clarity compared to the others.
+
+- **English Text-to-Speech**:  
+  The [**microsoft/speecht5_tts**](https://huggingface.co/microsoft/speecht5_tts) model, developed by Microsoft, was selected for English text-to-speech due to its high-quality pronunciation and clarity. Being from Microsoft, we are confident that this model benefits from state-of-the-art technology and is highly reliable for generating natural and clear speech, making it the best choice for our project.
+
+Both models will enhance the user experience by providing an enjoyable listening experience for the generated poems.
+
 
 ### Translation:
 Since the image generation model (CompVis/stable-diffusion-v1-4) does not support Arabic, we use the Helsinki-NLP/opus-mt-ar-en model to translate Arabic poems into English. This ensures that the model can interpret the text effectively and generate accurate images based on the translation.
