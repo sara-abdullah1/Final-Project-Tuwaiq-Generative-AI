@@ -1,22 +1,25 @@
-# Final-Project-Tuwaiq-Generative-AI
+## Final-Project-Tuwaiq-Generative-AI
 # PoemGen: AI Poetry Generation Project
 
 This project integrates several generative Artificial Intelligence tasks, including text generation, text-to-speech, translation, and text-to-image, using models from Hugging Face's Transformers library.
 
 The project allows users to generate poems in both Arabic and English based on their input, converts the text to speech, translates Arabic input into English to support text-to-image generation, and produces images that capture the essence of the poem.
 
-## Aim
+## Aim:
 
 The aim of this project is to:
-1. Automatically generate poems in both Arabic and English.
-2. Convert the generated poems to speech in their respective languages.
-3. Translate Arabic poems into English for image generation.
-4. Generate images that reflect the input sentence of the poems based on the English translation.
+1. Generate poems in both Arabic and English based on user input.
+2. Convert the generated poems into speech in their respective languages.
+3. Translate Arabic poems into English to support image generation.
+4. Generate images that visually represent the essence of the input poem.
 
-## Why We Chose These Models
+## Why We Chose These Models:
 
 - *Text Generation*: 
-We chose the akhooli/ap2023 model for Arabic poem generation and the ashiqabdulkhader/GPT2-Poet model for English. These models are pre-trained for creative text generation, making them ideal for producing meaningful and artistic poems.
+We chose the akhooli/ap2023 model for Arabic poem generation because the availability of high-quality Arabic poem generator models is limited, and many existing models lack consistency. This model stood out as the best option to support our idea compared to others.
+For English poem generation, we selected the ashiqabdulkhader/GPT2-Poet model. Although the availability of English poem generation models is limited, this model was the best among the available options. While it can generate poems as expected, it sometimes lacks coherence in meaning. However, compared to other models, it provided the most reliable results.
+
+These models are pre-trained for creative text generation, making them ideal for producing meaningful and artistic poems.
   
 - *Text-to-Speech (TTS)*: 
 The MBZUAI/speecht5_tts_clartts_ar model was selected for Arabic text-to-speech, and microsoft/speecht5_tts for English. Both models are highly accurate in producing natural-sounding speech, which enhances the user experience of listening to the generated poems.
