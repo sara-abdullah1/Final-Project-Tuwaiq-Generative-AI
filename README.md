@@ -22,7 +22,7 @@ You can try the project on Hugging Face: [PoemGen](https://huggingface.co/spaces
 
 ## Models
 
-1. **Poem Generation**:
+1. **Text Generation**:
    - Arabic poem generation using the [**akhooli/ap2023**](https://huggingface.co/akhooli/ap2023) model.
    - English poem generation using the [**ashiqabdulkhader/GPT2-Poet**](https://huggingface.co/ashiqabdulkhader/GPT2-Poet) model.
 
@@ -45,7 +45,7 @@ You can try the project on Hugging Face: [PoemGen](https://huggingface.co/spaces
   We chose the [**akhooli/ap2023**](https://huggingface.co/akhooli/ap2023) model for Arabic poem generation because the availability of high-quality Arabic poem generator models is limited, and many existing models lack consistency. This model stood out as the best option to support our idea compared to others.
 
 - **English Poem Generation**:  
-  For English poem generation, we selected the [**ashiqabdulkhader/GPT2-Poet**](https://huggingface.co/ashiqabdulkhader/GPT2-Poet) model. Although there is also a lack of high-quality English poem generation models, this one was the best among the available options. While it can generate poems as expected, it sometimes lacks coherence in meaning. However, compared to other models, it provided the most reliable results.
+  We chose the [**ashiqabdulkhader/GPT2-Poet**](https://huggingface.co/ashiqabdulkhader/GPT2-Poet) model. Although there is also a lack of high-quality English poem generation models, this one was the best among the available options. While it can generate poems as expected, it sometimes lacks coherence in meaning. However, compared to other models, it provided the most reliable results.
 
 These models are pre-trained for creative text generation, making them ideal for producing meaningful and artistic poems.
 
