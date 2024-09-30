@@ -162,69 +162,67 @@ This will open a Gradio UI where you can select the language (Arabic or English)
 
 
 ## Expected Output
+
 Below are the expected outputs for both English and Arabic poem generation, including the generated text, text-to-speech output, translation (if applicable), and the generated image based on the input.
 
 ### Example 1: English Poem
+
 #### Input:
-json
 {
     "dropdown": "English",
     "starter": "The shining sun rises over the calm ocean"
 }
 
-#### Output
-1. *Generated Poem:*
+#### Output:
+1. **Generated Poem:**
+   The shining sun rises over the calm ocean,  
+   A golden light that touches every motion.  
+   Waves gently dance under the sky so clear,  
+   A morning melody for all to hear.  
+   Dreams awaken with the break of day,  
+   As sunlight whispers in a soft display.
 
-css
-The shining sun rises over the calm ocean,
-A golden light that touches every motion.
-Waves gently dance under the sky so clear,
-A morning melody for all to hear.
-Dreams awaken with the break of day,
-As sunlight whispers in a soft display.
+2. **Text-to-Speech:**
+   The poem will be converted into English speech using the microsoft/speecht5_tts model, producing natural and clear audio for the generated poem.
 
-2. *Text-to-Speech:*
-The poem will be converted into English speech using the microsoft/speecht5_tts model, producing natural and clear audio for the generated poem.
-
-3. *Generated Image:* 
-An image of a tranquil ocean scene, with the sun rising over calm waters, gently touching the waves. The image will reflect the peaceful and serene environment described in the poem.
+3. **Generated Image:** 
+   An image of a tranquil ocean scene, with the sun rising over calm waters, gently touching the waves. The image will reflect the peaceful and serene environment described in the "starter" input.
 
 ### Example 2: Arabic Poem
-#### Input:
-json
 
+#### Input:
 {
     "dropdown": "Arabic",
     "starter": "الورود تتفتح في الربيع"
 }
 
-
 #### Output:
-1. *Generated Poem:*
+1. **Generated Poem:**
+   الورود تتفتح في الربيع،  
+   بألوان تملأ الفضاء الواسع.  
+   عبيرها يفوح مع النسيم العليل،  
+   ليغني أغنية الفجر الجميل.  
+   الأرض ترتدي ثوب الأزهار،  
+   في موسم الحب والأنوار.
 
-css
-الورود تتفتح في الربيع،
-بألوان تملأ الفضاء الواسع.
-عبيرها يفوح مع النسيم العليل،
-ليغني أغنية الفجر الجميل.
-الأرض ترتدي ثوب الأزهار،
-في موسم الحب والأنوار.
+2. **Text-to-Speech:**
+   The poem will be converted into Arabic speech using the MBZUAI/speecht5_tts_clartts_ar model. However, due to limitations with the Arabic text-to-speech model, some words may be mispronounced or skipped, and the speech may be cut off before completing the full poem.
+
+3. **Translation for Image Generation:**
+   Since the image model (runwayml/stable-diffusion-v1-5) only supports English input, the Arabic poem will be translated into English using the Helsinki-NLP/opus-mt-ar-en model:
+
+   The flowers bloom in spring,  
+   With colors filling the wide space.  
+   Their fragrance spreads with the gentle breeze,  
+   Singing the song of a beautiful dawn.  
+   The earth wears a dress of flowers,  
+   In the season of love and lights.
+
+4. **Generated Image:** 
+   An image of blooming flowers in a vibrant spring setting, with colorful blossoms filling the scene.
 
 
-2. *Text-to-Speech:*
- The poem will be converted into Arabic speech using the MBZUAI/speecht5_tts_clartts_ar model. However, due to limitations with the Arabic text-to-speech model, some words may be mispronounced or skipped, and the speech may be cut off before completing the full poem.
+## Hugging Face Space Link
 
-3. *Translation for Image Generation:*
-Since the image model (CompVis/stable-diffusion-v1-4) only supports English input, the Arabic poem will be translated into English using the Helsinki-NLP/opus-mt-ar-en model:
+You can try the project on Hugging Face: [PoemGen](https://huggingface.co/spaces/SarahMarzouq/PoemGen)
 
-css
-The flowers bloom in spring,
-With colors filling the wide space.
-Their fragrance spreads with the gentle breeze,
-Singing the song of a beautiful dawn.
-The earth wears a dress of flowers,
-In the season of love and lights.
-
-
-4. *Generated Image:* 
- An image of blooming flowers in a vibrant spring setting, with colorful blossoms filling the scene. The generated image will reflect the translated poem’s depiction of springtime beauty and nature.
