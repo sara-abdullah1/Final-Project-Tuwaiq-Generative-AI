@@ -24,8 +24,9 @@ The aim of this project is to:
   For English poem generation, we selected the [**ashiqabdulkhader/GPT2-Poet**](https://huggingface.co/ashiqabdulkhader/GPT2-Poet) model. Although there is also a lack of high-quality English poem generation models, this one was the best among the available options. While it can generate poems as expected, it sometimes lacks coherence in meaning. However, compared to other models, it provided the most reliable results.
 
 These models are pre-trained for creative text generation, making them ideal for producing meaningful and artistic poems.
+
   
-### Text-to-Speech
+### Text-to-Speech:
 
 - **Arabic Text-to-Speech**:  
   The [**MBZUAI/speecht5_tts_clartts_ar**](https://huggingface.co/MBZUAI/speecht5_tts_clartts_ar) model was selected for Arabic text-to-speech. After evaluating multiple Text-to-Speech models for Arabic, this one provided superior pronunciation and clarity compared to the others.
@@ -36,11 +37,15 @@ These models are pre-trained for creative text generation, making them ideal for
 Both models will enhance the user experience by providing an enjoyable listening experience for the generated poems.
 
 
-### Translation:
-Since the image generation model (CompVis/stable-diffusion-v1-4) does not support Arabic, we use the Helsinki-NLP/opus-mt-ar-en model to translate Arabic poems into English. This ensures that the model can interpret the text effectively and generate accurate images based on the translation.
+### Text Translation:
 
-### Image Generation:
-The runwayml/stable-diffusion-v1-5 model was chosen for its superior ability to generate detailed and relevant images from textual descriptions. By translating Arabic poems into English, we ensure that the model can interpret the meaning effectively and generate accurate visuals.
+Since the image generation model (**runwayml/stable-diffusion-v1-5**) does not support Arabic—primarily focusing on text-to-image generation using English-language prompts—we use the [**Helsinki-NLP/opus-mt-ar-en**](https://huggingface.co/Helsinki-NLP/opus-mt-ar-en) model to translate Arabic poems into English. This ensures that the model can interpret the text effectively and generate accurate images based on the translation. We chose this model as it is one of the most downloaded and highly rated models on Hugging Face specifically for translating Arabic to English.
+
+
+### Text-to-Image:
+
+The [**runwayml/stable-diffusion-v1-5**](https://huggingface.co/runwayml/stable-diffusion-v1-5) model was chosen for its superior ability to generate detailed and relevant images from textual descriptions. Its advanced capabilities in interpreting prompts enable it to create visually striking and contextually appropriate images based on the provided input.
+
 
 ## Limitations
 - *Poem Generation Quality*: 
