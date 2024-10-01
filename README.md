@@ -223,5 +223,5 @@ Sentence (Text) :  "الورود تتفتح في الربيع"
    An image of blooming flowers in a vibrant spring setting, with colorful blossoms filling the scene.
 
 
-## Video:
-A video demonstrating the project has been uploaded to the repository. You can view it for a better understanding of the project. You can find it in the [`video/`](./video) directory as `demo_video.mp4`.
+## Video and Slides:
+A video and Slides demonstrating the project has been uploaded to the repository. You can view it for a better understanding of the project. You can find it in the [`video/`](./video) directory as `demo_video.mp4`. and [`slides/`](./slides) directory as `PoemGen_compressed.pdf`.
